@@ -5,6 +5,7 @@ jdk:
 services:
  -docker
 before_install: 
+  - chmod +x ms-try/mvnw
   - chmod +x orchestration/mvnw
 script: 
   - docker build -t parna4laskar/docker-mstest-img ./ms-try
