@@ -12,7 +12,6 @@ script:
   - docker build -t parna4laskar/docker-orchestration-img ./orchestration
 after_script: 
   - docker images
-before-deploy:
- - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
- - docker push parna4laskar/docker-mstest-img
- - docker push parna4laskar/docker-orchestration-img
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push parna4laskar/docker-mstest-img
+  - docker push parna4laskar/docker-orchestration-img
