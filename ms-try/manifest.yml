@@ -1,0 +1,6 @@
+name: ms-try
+path: test/target/ms-try-0.0.1-SNAPSHOT.jar
+buildpack: https://github.com/cloudfoundry/java-buildpack.git
+memory: 768MB
+env:
+    spring.profiles.active: dev

@@ -1,0 +1,4 @@
+com\ms\mstry\controller\bean\UserInfo.class
+com\ms\mstry\controller\LoginController.class
+com\ms\mstry\SwaggerConfig.class
+com\ms\mstry\MsTryApplication.class

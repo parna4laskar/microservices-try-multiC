@@ -1,0 +1,8 @@
+name: orchestration
+path: target/orchestration-0.0.1-SNAPSHOT.jar
+buildpack: https://github.com/cloudfoundry/java-buildpack.git
+memory: 768MB
+env:
+    spring.profiles.active: dev
+services:
+  - eureka
