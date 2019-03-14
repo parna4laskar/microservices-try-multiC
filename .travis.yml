@@ -20,7 +20,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "multi-container-services"
-  env: "MultiContainerServices-env "
+  env: "MultiContainerServices-env"
   bucket-name: "elasticbeanstalk-us-east-1-715582379091"
   bucket-path: "multi-container-services"
   on:
