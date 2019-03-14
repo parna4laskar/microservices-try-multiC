@@ -13,5 +13,20 @@ script:
 after_script: 
   - docker images
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login dockerio -u "$DOCKER_ID" --password-stdin
   - docker push parnalaskar/docker-mstest-img
   - docker push parnalaskar/docker-orchestration-img
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "multi-container-services"
+  env: "MultiContainerServices-env "
+  bucket-name: "elasticbeanstalk-us-east-1-715582379091"
+  bucket-path: "multi-container-services"
+  on:
+    branch: master
+   access_key_id: "$AWS_ACCESS_KEY"
+   secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
+  
