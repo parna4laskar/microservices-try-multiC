@@ -10,14 +10,12 @@ before_install:
 script: 
   - docker build -t parnalaskar/docker-mstest-img ./ms-try
   - docker build -t parnalaskar/docker-orchestration-img ./orchestration
-  - docker build -t parnalaskar/docker-eureka-img ./eureka-naming-server
 after_script: 
   - docker images
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - echo "$DOCKER_PASSWORD" | docker login dockerio -u "$DOCKER_ID" --password-stdin
   - docker push parnalaskar/docker-mstest-img
   - docker push parnalaskar/docker-orchestration-img
-  - docker push parnalaskar/docker-eureka-img
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
