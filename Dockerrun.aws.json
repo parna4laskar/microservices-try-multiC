@@ -1,6 +1,19 @@
 {
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
+  
+  	{
+      "name": "eureka",
+      "image": "parnalaskar/docker-eureka-img",
+      "essential": true,
+      "memoryReservation": 256,
+      "portMappings": [
+        {
+          "hostPort": 8761,
+          "containerPort": 8761
+        }
+      ]
+    },
     {
       "name": "ms-test",
       "image": "parnalaskar/docker-mstest-img",
@@ -31,18 +44,7 @@
       "links": [
         "ms-test","eureka"
       ]
-    },
-	{
-      "name": "eureka",
-      "image": "parnalaskar/docker-eureka-img",
-      "essential": true,
-      "memoryReservation": 256,
-      "portMappings": [
-        {
-          "hostPort": 8761,
-          "containerPort": 8761
-        }
-      ]
     }
+
   ]
 }
