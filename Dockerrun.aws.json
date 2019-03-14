@@ -42,9 +42,6 @@
           "hostPort": 8761,
           "containerPort": 8761
         }
-      ],
-      "links": [
-        "ms-test","orchestration"
       ]
     }
   ]
