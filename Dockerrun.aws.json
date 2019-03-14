@@ -12,12 +12,15 @@
           "hostPort": 8080,
           "containerPort": 8080
         }
+      ],
+	   "links": [
+        "eureka"
       ]
     },
     {
       "name": "orchestration",
       "image": "parnalaskar/docker-orchestration-img",
-      "essential": true,
+      "essential": false,
       "memory": 256,
       "portMappings": [
         {
@@ -26,7 +29,22 @@
         }
       ],
       "links": [
-        "ms-test"
+        "ms-test","eureka"
+      ]
+    },
+	{
+      "name": "eureka",
+      "image": "parnalaskar/docker-eureka-img",
+      "essential": true,
+      "memory": 256,
+      "portMappings": [
+        {
+          "hostPort": 8761,
+          "containerPort": 8761
+        }
+      ],
+      "links": [
+        "ms-test","orchestration"
       ]
     }
   ]
