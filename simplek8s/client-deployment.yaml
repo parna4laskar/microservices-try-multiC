@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mstest-deployment
+  labels:
+    app: mstest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mstest
+  template:
+    metadata:
+      labels:
+        app: mstest
+    spec:
+      containers:
+      - name: mstest
+        image: parnalaskar/docker-mstest-img:latest
+        ports:
+        - containerPort: 8080

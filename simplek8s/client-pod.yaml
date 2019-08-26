@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multic
+  labels:
+    name: test
+spec:
+  containers:
+  - name: mutic-k8s
+    image: parnalaskar/docker-mstest-img:latest
+    ports:
+    - containerPort: 80

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: ms-try
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Parna
+Implementation-Vendor-Id: com.ms
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/ms-try
+Created-By: Maven Integration for Eclipse
+
